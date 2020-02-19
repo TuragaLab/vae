@@ -5,8 +5,8 @@ Model-agnostic variational autoencoder tools.
 
 Here we are going to put together a set of generic modules for variational autoencoder related tasks.
 
-Uniform VAE interface
-=====================
+Uniform variational autoencoder interface
+=========================================
 
 We follow a uniform API of inference network, generative model, and loss
 calculation, allowing for modularity and ease of use.
@@ -15,10 +15,9 @@ The **inference network** and **generative model** are essentially probability
 distributions having the same API and implementing  ``forward``, ``sample``,
 and ``log_prob`` methods. Conceptually, this amounts to:
 
-1. Calling the object. This will perform forward pass and update the internal
-state of the underlying probability distribution.
-2. Sampling from the probability distribution.
-3. Log-probability calculation.
+ 1. Calling the object. This will perform forward pass and update the internal state of the underlying probability distribution.
+ 2. Sampling from the probability distribution.
+ 3. Log-probability calculation.
 
 The **loss** API amounts to simply passing the entire model and training batch
 to the loss object. This will allow the loss object to drive the model (using
@@ -66,12 +65,11 @@ update's one).
 
 :Data format:
 
- The shape and format of ``data``, ``latents`` and ``samples`` must be consistent
-with the model's ``inf_net`` and ``gen_model`` expected input and output, which
-is up to the user. On the other hand, the ``forward`` method of the ``loss``
-object expects ``log_q`` and ``log_p`` to be 2D tensors with shape [batch_size, n_samples].
+ The shape and format of ``data``, ``latents`` and ``samples`` must be consistent with the model's ``inf_net`` and ``gen_model`` expected input and output, which is up to the user. On the other hand, the ``forward`` method of the ``loss`` object expects ``log_q`` and ``log_p`` to be 2D tensors with shape [batch_size, n_samples].
+
 
 TODO:
+
 Wake update sequence...
 
 Sleep update sequence...
