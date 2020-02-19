@@ -66,11 +66,10 @@ update's one).
 
 :Data format:
 
- The shape and format of ``data``, ``latents`` and ``samples`` must be
-consistent with the model's ``inf_net`` and ``gen_model`` expected input and
-output, which is up to the user. On the other hand, the ``forward`` method of
-the ``loss`` object expects ``log_q`` and ``log_p`` to be 2D tensors with shape
-[batch_size, n_samples].
+ The shape and format of ``data``, ``latents`` and ``samples`` must be consistent
+with the model's ``inf_net`` and ``gen_model`` expected input and output, which
+is up to the user. On the other hand, the ``forward`` method of the ``loss``
+object expects ``log_q`` and ``log_p`` to be 2D tensors with shape [batch_size, n_samples].
 
 TODO:
 Wake update sequence...
