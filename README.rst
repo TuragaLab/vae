@@ -9,15 +9,15 @@ Uniform variational autoencoder interface
 =========================================
 
 We follow a uniform API of inference network, generative model, and loss
-calculation, allowing for modularity and ease of use.
+calculation, allowing for modularity and ease of use. The API is as follows.
 
-The **inference network** and **generative model** are essentially probability
-distributions having the same API and implementing  ``forward``, ``sample``,
+The **inference network** and **generative model** essentially represent probability
+distributions and therefore have the same API implementing  ``forward``, ``sample``,
 and ``log_prob`` methods. Conceptually, this amounts to:
 
- 1. Calling the object. This will perform forward pass and update the internal state of the underlying probability distribution.
- 2. Sampling from the probability distribution.
- 3. Log-probability calculation.
+1. Calling the object. This will perform forward pass and update the internal state of the underlying probability distribution.
+2. Sampling from the probability distribution.
+3. Log-probability calculation.
 
 The **loss** API amounts to simply passing the entire model and training batch
 to the loss object. This will allow the loss object to drive the model (using
@@ -61,7 +61,7 @@ update's one).
  ``some_loss = SomeLoss(inf_net, gen_model)`` # instantiate loss object, pass
  inference network and generative model instances
 
- ``loss = some_loss(data)`` # performs forward pass and returns scalar loss
+ ``loss = some_loss(data)`` # performs forward pass and returns scalar loss to perform backward pass on
 
 :Data format:
 
