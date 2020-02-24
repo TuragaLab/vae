@@ -8,7 +8,7 @@ Here we are going to put together a set of generic modules for variational autoe
 Uniform variational autoencoder interface
 =========================================
 
-We follow a uniform API of inference network, generative model, and loss
+We follow a uniform API for inference network, generative model, and loss
 calculation, allowing for modularity and ease of use. The API is as follows.
 
 The **inference network** and **generative model** essentially represent probability
@@ -62,6 +62,12 @@ update's one).
  inference network and generative model instances
 
  ``loss = some_loss(data)`` # performs forward pass and returns scalar loss to perform backward pass on
+
+ The loss instance ``some_loss`` also collects and stores training history losses, which can be queried for:
+
+ ``loss_history = some_loss.loss_history_``
+
+ Also, optionally, loss object collects additional information, such as ``log_p`` and ``log_q`` for VIMCO loss, for example.
 
 :Data format:
 
