@@ -23,7 +23,9 @@ The **loss** API amounts to simply passing the entire model and training batch
 to the loss object. This will allow the loss object to drive the model (using
 the model's API described above) in accordance with its specific forward pass
 requirements (e.g., the wake update forward pass is different from sleep
-update's one).
+update's one). The loss instance will also collect and store loss history during training.
+
+In more detail, the API is:
 
 :Inference network:
 
