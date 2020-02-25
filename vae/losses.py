@@ -194,7 +194,7 @@ class QWake(torch.nn.Module):
         w_norm = torch.nn.functional.softmax(log_w, dim=1) # (batch_size, n_samples)
         wake_q_loss = -torch.sum(w_norm*log_q) # scalar loss
         # Step 3: Update class attributes
-        self.loss_history_.append(wake_p_loss.item())
+        self.loss_history_.append(wake_q_loss.item())
         self.mean_log_q_.append(log_q.mean().item())
         self.mean_log_p_.append(log_p.mean().item())
         return wake_q_loss
