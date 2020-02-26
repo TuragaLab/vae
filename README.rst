@@ -33,7 +33,7 @@ In more detail, the API is:
  required hyperparameters
 
  ``inf_net(data)`` # forward pass, updates some ``params_`` attributes of
- q(z|x), returns ``self``
+ q(z|x), returns ``self``. Conceptually, this is the "given-x" part of q(z|x).
 
  ``params = inf_net.params_`` # attribute query
 
@@ -79,6 +79,8 @@ In more detail, the API is:
 **TODO:**
 
 Important distinction between discrete and continuous latent variables...
+
+Add abstract classes (templates)...
 
 Wake update sequence...
 
