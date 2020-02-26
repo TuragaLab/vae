@@ -46,6 +46,9 @@ class VIMCO(torch.nn.Module):
         Call to instance: Performs forward pass and returns scalar VIMCO loss.
     """
 
+    name = 'vimco' # name of the loss for plots etc.
+    updates = ['inf', 'gen'] # what updates this loss is for
+
     def __init__(self, inf_net, gen_model):
         """
         Args:
@@ -113,6 +116,9 @@ class PWake(torch.nn.Module):
         Call to instance: Performs forward pass and returns scalar p-wake loss.
     """
 
+    name = 'p_wake'
+    updates = ['gen']
+
     def __init__(self, inf_net, gen_model):
         """
         Args:
@@ -171,6 +177,9 @@ class QWake(torch.nn.Module):
         Call to instance: Performs forward pass and returns scalar p-wake loss.
     """
 
+    name = 'q_wake'
+    updates = ['inf']
+
     def __init__(self, inf_net, gen_model):
         """
         Args:
@@ -212,6 +221,9 @@ class QSleep(torch.nn.Module):
     Methods:
         Call to instance: Performs forward pass and returns scalar q-sleep loss.
     """
+
+    name = 'q_sleep'
+    updates = ['inf']
 
     def __init__(self, inf_net, gen_model):
         """
