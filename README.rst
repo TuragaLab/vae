@@ -3,7 +3,7 @@ vae
 
 Model-agnostic variational autoencoder tools.
 
-Here we are going to put together a set of generic modules for variational autoencoder related tasks.
+Here we are putting together a set of generic modules for variational autoencoder related tasks.
 
 Uniform variational autoencoder interface
 =========================================

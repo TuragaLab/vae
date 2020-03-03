@@ -34,6 +34,9 @@ import torch
 class VIMCO(torch.nn.Module):
     """Model-agnostic vectorized VIMCO loss for both rec and gen model updates.
 
+    Does not rely on reparametrization and works for both discrete and continuous
+    latent variables.
+
     VIMCO paper: https://arxiv.org/abs/1602.06725
 
     Attributes:
