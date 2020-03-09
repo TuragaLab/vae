@@ -5,6 +5,10 @@ Model-agnostic variational autoencoder tools.
 
 Here we are putting together a set of generic modules for variational autoencoder related tasks.
 
+In what follows, no assumptions are made as to the nature of latent variables (they can be both discrete and continuous).
+However, it *is* assumed that the model is a "black-box" one, i.e. we consider the most general case without resorting to reparametrization.
+Special cases allowing reparametrization will be considered/implemented later.
+
 Uniform variational autoencoder interface
 =========================================
 
