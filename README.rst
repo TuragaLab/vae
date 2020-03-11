@@ -96,7 +96,13 @@ Concrete examples with, say, logits for spike-inference...
 
 References
 ==========
-- \D. Kingma and M. Welling, Auto-Encoding Variational Bayes, arXiv:1312.6114v10 [stat.ML], 2013.
-- \D. J. Rezende, S. Mohamed, D. Wierstra, Stochastic Backpropagation and Approximate Inference in Deep Generative Models, arXiv:1401.4082 [stat.ML], 2014.
-- \Y. Burda, R. Grosse, R. Salakhutdinov, Importance Weighted Autoencoders, arXiv:1509.00519v4 [cs.LG], 2015.
-- \A. Mnih, D. J. Rezende, Variational Inference for Monte Carlo Objectives, arXiv:1602.06725v2 [cs.LG], 2016.
+- Diederik P. Kingma and Max Welling, Auto-Encoding Variational Bayes, arXiv:1312.6114v10 [stat.ML], 2013.
+- Danilo Jimenez Rezende, Shakir Mohamed, Daan Wierstra, Stochastic Backpropagation and Approximate Inference in Deep Generative Models, arXiv:1401.4082 [stat.ML], 2014.
+- Yuri Burda, Roger Grosse, Ruslan Salakhutdinov, Importance Weighted Autoencoders, arXiv:1509.00519v4 [cs.LG], 2015.
+- Andriy Mnih and Danilo J. Rezende, Variational Inference for Monte Carlo Objectives, arXiv:1602.06725v2 [cs.LG], 2016.
+- \J. Bornschein and Y. Bengio, Reweighted Wake-Sleep, arXiv:1406.2751v4 [cs.LG], 2015.
+- \T. A. Le, A. R. Kosiorek, N. Siddharth, Y. W. Teh, F. Wood, Revisiting Reweighted Wake-Sleep, arXiv:1805.10469v2 [stat.ML], 2019.
+- \J. Schulman, N. Heess, T. Weber, P. Abbeel, Gradient Estimation Using Stochastic Computation Graphs, arXiv:1506.05254v3 [cs.LG], 2016.
+- \S. Mohamed, M. Rosca, M. Figurnov, A. Mnih, Monte Carlo Gradient Estimation in Machine Learning, arXiv:1906.10652v1 [stat.ML], 2019.
+- \C. J. Maddison, A. Mnih, Y. W. Teh, The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables, arXiv:1611.00712v3 [cs.LG], 2017.
+- Eric Jang, Shixiang Gu, Ben Poole, Categorical Reparameterization with Gumbel-Softmax, arXiv:1611.01144v5 [stat.ML], 2017.
