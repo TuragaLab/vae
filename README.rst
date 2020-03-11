@@ -93,3 +93,13 @@ Sleep update sequence...
 Short version with one-liners...
 
 Concrete examples with, say, logits for spike-inference...
+
+References
+==========
+D. Kingma and M. Welling, Auto-Encoding Variational Bayes, arXiv:1312.6114v10 [stat.ML], 2013.
+
+D. J. Rezende, S. Mohamed, D. Wierstra, Stochastic Backpropagation and Approximate Inference in Deep Generative Models, arXiv:1401.4082 [stat.ML], 2014.
+
+Y. Burda, R. Grosse, R. Salakhutdinov, Importance Weighted Autoencoders, arXiv:1509.00519v4 [cs.LG], 2015.
+
+A. Mnih, D. J. Rezende, Variational Inference for Monte Carlo Objectives, arXiv:1602.06725v2 [cs.LG], 2016.
