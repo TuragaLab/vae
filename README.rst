@@ -82,8 +82,6 @@ In more detail, the API is:
 
 **TODO:**
 
-Important distinction between discrete and continuous latent variables...
-
 Add abstract classes (templates)...
 
 Wake update sequence...
@@ -103,14 +101,15 @@ General VAE
 - Danilo Jimenez Rezende, Shakir Mohamed, Daan Wierstra, Stochastic Backpropagation and Approximate Inference in Deep Generative Models, arXiv:1401.4082 [stat.ML], 2014.
 - Yuri Burda, Roger Grosse, Ruslan Salakhutdinov, Importance Weighted Autoencoders, arXiv:1509.00519v4 [cs.LG], 2015.
 
-General gradient estimation
----------------------------
+Gradient estimation, general
+----------------------------
 - John Schulman, Nicolas Heess, Theophane Weber, Pieter Abbeel, Gradient Estimation Using Stochastic Computation Graphs, arXiv:1506.05254v3 [cs.LG], 2016.
 - Shakir Mohamed, Mihaela Rosca, Michael Figurnov, Andriy Mnih, Monte Carlo Gradient Estimation in Machine Learning, arXiv:1906.10652v1 [stat.ML], 2019.
 
-Specific gradient estimations and optimization algorithms
----------------------------------------------------------
+Optimization algorithms and gradient estimation
+-----------------------------------------------
 - Andriy Mnih and Danilo J. Rezende, Variational Inference for Monte Carlo Objectives, arXiv:1602.06725v2 [cs.LG], 2016.
+- Andriy Mnih and Karol Gregor, Neural Variational Inference and Learning in Belief Networks, arXiv:1402.0030v2 [cs.LG], 2014.
 - Jorg Bornschein, Yoshua Bengio, Reweighted Wake-Sleep, arXiv:1406.2751v4 [cs.LG], 2015.
 - Tuan Anh Le, Adam R. Kosiorek, N. Siddharth, Yee Whye Teh, Frank Wood, Revisiting Reweighted Wake-Sleep, arXiv:1805.10469v2 [stat.ML], 2019.
 - Chris J. Maddison, Andriy Mnih, Yee Whye Teh, The Concrete Distribution: A Continuous Relaxation of Discrete Random Variables, arXiv:1611.00712v3 [cs.LG], 2017.
