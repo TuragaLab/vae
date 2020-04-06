@@ -8,6 +8,10 @@ Implemented losses:
     All three Reweighted Wake-Sleep losses: PWake, QWake, QSleep,
     https://arxiv.org/abs/1406.2751
 
+    COMING SOON:
+    Reparametrized ELBO for continuous latent variables.
+
+
 inf_net, gen_model, train_data must comply with the following interface:
 
     data = [x1, x2, ...] # list of observed data variables
@@ -95,12 +99,12 @@ class VIMCO(torch.nn.Module):
         Li = torch.logsumexp(Log_f, dim=2) - torch.log(K.float())
         w = torch.nn.functional.softmax(log_f, dim=1)
         objective = w.detach()*log_f + (L.unsqueeze(1)-Li).detach()*log_q # (batch_size, n_samples)
-        loss = -torch.mean(objective) # scalar loss
+        loss = -objective.sum(dim=1).mean() # Sum over samples, average over batch
         # Step 3: Update class attributes
         self.loss_history_.append(loss.item())
         self.mean_log_q_.append(log_q.mean().item())
         self.mean_log_p_.append(log_p.mean().item())
-        return loss
+        return loss # scalar loss
 
 
 class PWake(torch.nn.Module):
