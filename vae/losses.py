@@ -56,17 +56,23 @@ class VIMCO(torch.nn.Module):
     name = 'vimco' # name of the loss for plots etc.
     updates = ['inf', 'gen'] # what updates this loss is for
 
-    def __init__(self, inf_net, gen_model):
+    def __init__(self, inf_net, gen_model, regularizer=None):
         """
         Args:
             inf_net (object): Recognition model instance.
             gen_model (object): Generative model instance.
+            regularizer (object): Optional callable regularizer. Will be called
+                as: loss = loss + regularizer() in the forward method below.
 
         inf_net & gen_model instances must comply with the interface outlined above.
         """
         super().__init__()
         self.inf_net = inf_net
         self.gen_model = gen_model
+        if regularizer is not None:
+            self.regularizer = regularizer
+        else:
+            self.regularizer = lambda: torch.tensor(0.)
         self.loss_history_ = [] # To be appended at each training iteration
         self.mean_log_p_ = []
         self.mean_log_q_ = []
@@ -100,6 +106,7 @@ class VIMCO(torch.nn.Module):
         w = torch.nn.functional.softmax(log_f, dim=1)
         objective = w.detach()*log_f + (L.unsqueeze(1)-Li).detach()*log_q # (batch_size, n_samples)
         loss = -objective.sum(dim=1).mean() # Sum over samples, average over batch
+        loss = loss + self.regularizer()
         # Step 3: Update class attributes
         self.loss_history_.append(loss.item())
         self.mean_log_q_.append(log_q.mean().item())
